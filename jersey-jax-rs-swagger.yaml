@@ -1,0 +1,70 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: ""
+host: "localhost:8080"
+basePath: "/jax-rs-swagger"
+tags:
+- name: "prime"
+- name: "myresource"
+schemes:
+- "http"
+paths:
+  /myresource:
+    get:
+      tags:
+      - "myresource"
+      operationId: "getIt"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "string"
+          headers: {}
+  /prime/findAllPrimeNumbers:
+    get:
+      tags:
+      - "prime"
+      summary: "This Will return prime numbers from given input value."
+      description: ""
+      operationId: "findPrimeNumbers"
+      consumes:
+      - "text/plain"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - name: "start"
+        in: "query"
+        required: false
+        type: "integer"
+        format: "int32"
+      - name: "end"
+        in: "query"
+        required: false
+        type: "integer"
+        format: "int32"
+      responses:
+        400:
+          description: "throws InvalidNumbersException"
+  /prime/getPrimeNumbers:
+    get:
+      tags:
+      - "prime"
+      operationId: "getPrimeNumbers"
+      parameters:
+      - name: "pageNumber"
+        in: "query"
+        required: false
+        type: "integer"
+        format: "int32"
+      - name: "noOfElementsPerpage"
+        in: "query"
+        required: false
+        type: "integer"
+        format: "int32"
+      responses:
+        default:
+          description: "successful operation"
