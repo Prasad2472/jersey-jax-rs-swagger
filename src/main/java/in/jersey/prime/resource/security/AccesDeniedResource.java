@@ -20,6 +20,7 @@ import org.springframework.stereotype.Component;
 public class AccesDeniedResource {
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response accessDenied() {
+		System.out.println("Access Denied..");
 		return Response.status(Status.UNAUTHORIZED).entity("You cannot Access the resource").build();
 	}
 

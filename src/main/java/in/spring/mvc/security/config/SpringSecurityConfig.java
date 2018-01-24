@@ -15,9 +15,11 @@ import org.springframework.security.web.access.AccessDeniedHandler;
  * @author Prasad Boini
  *
  */
-@Configuration
-@EnableWebSecurity
-public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
+// @Configuration
+// @EnableWebSecurity
+public class SpringSecurityConfig
+// extends WebSecurityConfigurerAdapter
+{
 
 	@Autowired
 	private AccessDeniedHandler accessDeniedHandler;
@@ -29,7 +31,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	// roles admin allow to access /admin/**
 	// roles user allow to access /user/**
 	// custom 403 access denied handler
-	@Override
+//	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http.csrf().disable().authorizeRequests().antMatchers("/myresource").permitAll().antMatchers("/prime/**")

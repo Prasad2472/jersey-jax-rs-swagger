@@ -14,13 +14,15 @@
 
 	<http auto-config="true">
 		<!-- <intercept-url pattern="/**" access="ROLE_USER" /> -->
-		<intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
+		<intercept-url pattern="/webapi/**" access="hasRole('ROLE_USER')" />
+		<!-- <form-login login-page="/webapi/accessDenied" authentication-failure-url="/webapi/accessDenied"/> -->
+		<access-denied-handler error-page="/webapi/accessDenied"/>
 	</http>
 
 	<authentication-manager>
 		<authentication-provider>
 			<user-service>
-				<user name="bryan" password="secret" authorities="ROLE_USER"/>
+				<user name="user" password="secret" authorities="ROLE_USER"/>
 			</user-service>
 		</authentication-provider>
 	</authentication-manager>

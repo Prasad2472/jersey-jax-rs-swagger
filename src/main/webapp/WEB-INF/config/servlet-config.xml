@@ -10,6 +10,6 @@
 	<context:annotation-config />
 	<!-- <mvc:resources location="assets" mapping="/assets/**"/> <mvc:resources 
 		location="pdfs" mapping="/pdfs/**"/> -->
-	<context:component-scan base-package="in.jersey.prime.resource.security" />
+	<context:component-scan base-package="in.jersey.prime.resource.security,in.spring.mvc.security" />
 
 </beans>
