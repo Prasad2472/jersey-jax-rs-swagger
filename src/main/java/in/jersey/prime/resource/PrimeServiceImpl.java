@@ -5,17 +5,21 @@ package in.jersey.prime.resource;
 
 import java.util.List;
 
+import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import in.jersey.prime.exception.InvalidNumbersException;
 import in.jersey.prime.exception.PossitiveNumberException;
 import in.jersey.prime.model.PrimeResponse;
+import io.swagger.annotations.Api;
 
 /**
  * @author Prasad Boini
  *
  */
+@Path("/prime")
+@Api(value = "prime")
 public class PrimeServiceImpl implements PrimeService {
 	private PrimeUtil primeNumberHelper = new PrimeUtil();
 
